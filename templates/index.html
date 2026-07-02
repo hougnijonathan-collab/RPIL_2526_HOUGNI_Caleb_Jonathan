@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IFRI_MentorLink — Trouver un mentor</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="min-h-screen">
+
+  <header class="header">
+    <div class="max-w-4xl mx-auto px-6 py-8">
+      <p class="eyebrow">IFRI · Institut de Formation et de Recherche en Informatique</p>
+      <h1 class="title">MentorLink</h1>
+      <p class="subtitle">Décrivez ce que vous cherchez à apprendre et quand vous êtes disponible — on associe le bon mentor.</p>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 pb-24 -mt-8">
+
+    <section class="card" id="search-card">
+      <form id="search-form" class="space-y-6">
+
+        <div>
+          <label class="field-label" for="matieres">Matières ou compétences recherchées</label>
+          <input
+            type="text"
+            id="matieres"
+            name="matieres"
+            class="field-input"
+            placeholder="ex : Mathématiques, Algorithmique"
+            autocomplete="off"
+            required
+          >
+          <p class="field-hint">Séparez plusieurs matières par une virgule.</p>
+          <div id="matieres-suggestions" class="suggestions"></div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div>
+            <label class="field-label" for="heure">Créneau souhaité</label>
+            <input
+              type="time"
+              id="heure"
+              name="heure"
+              class="field-input"
+              required
+            >
+            <p class="field-hint">Tolérance automatique de ± 1 heure.</p>
+          </div>
+
+          <div>
+            <label class="field-label" for="filiere">Filière <span class="optional">(optionnel)</span></label>
+            <input
+              type="text"
+              id="filiere"
+              name="filiere"
+              class="field-input"
+              placeholder="ex : Génie Logiciel"
+              autocomplete="off"
+            >
+          </div>
+        </div>
+
+        <button type="submit" class="btn-primary">
+          Rechercher un mentor
+        </button>
+      </form>
+    </section>
+
+    <section id="results-section" class="mt-10 hidden">
+      <div class="flex items-baseline justify-between mb-5">
+        <h2 class="results-title">Mentors compatibles</h2>
+        <span id="results-count" class="results-count"></span>
+      </div>
+      <div id="results-list" class="space-y-4"></div>
+    </section>
+
+    <section id="empty-state" class="mt-10 hidden">
+      <div class="empty-card">
+        <p class="empty-title">Aucun mentor compatible</p>
+        <p class="empty-text">Essayez d'élargir votre créneau horaire ou de vérifier l'orthographe de la matière.</p>
+      </div>
+    </section>
+
+    <section id="error-state" class="mt-10 hidden">
+      <div class="error-card">
+        <p id="error-text"></p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>Projet intégrateur — Rattrapage 2025-2026 · IFRI_MentorLink</p>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

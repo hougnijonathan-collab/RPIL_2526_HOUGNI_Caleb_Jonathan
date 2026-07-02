@@ -1,0 +1,232 @@
+:root {
+  --ink: #1c2b28;
+  --parchment: #f6f2ea;
+  --moss: #3c5c4c;
+  --moss-dark: #2a4238;
+  --clay: #b5654a;
+  --line: #ded5c2;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: var(--parchment);
+  color: var(--ink);
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.header {
+  background: linear-gradient(180deg, var(--moss-dark) 0%, var(--moss) 100%);
+  color: var(--parchment);
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #cfe0d5;
+  font-weight: 500;
+}
+
+.title {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: 2.75rem;
+  line-height: 1.05;
+  margin-top: 0.35rem;
+}
+
+.subtitle {
+  margin-top: 0.75rem;
+  color: #e3ecE6;
+  max-width: 34rem;
+  font-size: 1rem;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 2rem;
+  box-shadow: 0 12px 30px -18px rgba(28, 43, 40, 0.35);
+}
+
+.field-label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+}
+
+.optional {
+  font-weight: 400;
+  color: #8a8375;
+  font-size: 0.8rem;
+}
+
+.field-input {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 0.65rem 0.85rem;
+  font-size: 0.95rem;
+  background: #fffdf9;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.field-input:focus {
+  outline: none;
+  border-color: var(--moss);
+  box-shadow: 0 0 0 3px rgba(60, 92, 76, 0.15);
+}
+
+.field-hint {
+  margin-top: 0.35rem;
+  font-size: 0.78rem;
+  color: #8a8375;
+}
+
+.suggestions {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.suggestion-chip {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.6rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fffdf9;
+  cursor: pointer;
+  color: var(--moss-dark);
+  transition: background 0.15s ease;
+}
+
+.suggestion-chip:hover {
+  background: #eef2ea;
+}
+
+.btn-primary {
+  background: var(--clay);
+  color: #fff;
+  font-weight: 600;
+  padding: 0.8rem 1.5rem;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.btn-primary:hover { background: #a2543b; }
+.btn-primary:active { transform: scale(0.98); }
+.btn-primary:disabled { opacity: 0.6; cursor: wait; }
+
+.results-title {
+  font-family: 'Fraunces', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.results-count {
+  font-size: 0.85rem;
+  color: #8a8375;
+}
+
+.mentor-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--moss);
+  border-radius: 3px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.mentor-name {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+
+.mentor-meta {
+  font-size: 0.85rem;
+  color: #5b5648;
+  margin-top: 0.35rem;
+  line-height: 1.6;
+}
+
+.mentor-meta strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background: #eef2ea;
+  color: var(--moss-dark);
+  margin-right: 0.3rem;
+}
+
+.score-badge {
+  flex-shrink: 0;
+  text-align: center;
+  min-width: 4.5rem;
+}
+
+.score-number {
+  font-family: 'Fraunces', serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--clay);
+  line-height: 1;
+}
+
+.score-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #8a8375;
+  margin-top: 0.2rem;
+}
+
+.empty-card, .error-card {
+  border: 1px dashed var(--line);
+  border-radius: 4px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.empty-title {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+
+.empty-text {
+  color: #8a8375;
+  font-size: 0.9rem;
+  margin-top: 0.4rem;
+}
+
+.error-card {
+  border-color: #d99a8a;
+  background: #fbf0ec;
+  color: #9a3f28;
+}
+
+.footer {
+  text-align: center;
+  font-size: 0.78rem;
+  color: #8a8375;
+  padding: 2rem 1rem;
+}
+
+.hidden { display: none; }
