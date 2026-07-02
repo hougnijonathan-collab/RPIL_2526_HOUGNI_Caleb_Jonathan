@@ -84,20 +84,4 @@ MySQL puis applique les règles côté back-end :
      dégressif jusqu'à 0 à la limite des ±60 minutes de tolérance)
 5. Les résultats sont triés par score décroissant.
 
-## Soumission
 
-1. Renommez le dépôt GitHub : `RPIL_2526_nom_prenom` (remplacez par votre
-   nom et prénom) et poussez-y ce projet.
-2. Deadline : **samedi 4 juillet 2026, 15h**.
-3. Présentation en ligne : **lundi 6 juillet 2026, à partir de 16h**.
-
-```bash
-git init
-git add .
-git commit -m "IFRI_MentorLink - version rattrapage (Flask + MySQL)"
-git branch -M main
-git remote add origin https://github.com/<votre-utilisateur>/RPIL_2526_nom_prenom.git
-git push -u origin main
-```
-
-`.gitignore` est fourni pour exclure `venv/` du dépôt.
