@@ -10,7 +10,7 @@ Technologies imposées par le sujet :
 - Backend  : Python / Flask
 - Base de données : MySQL
 
-Auteur : Ozias (FAST-UAC)
+
 """
 
 import os
